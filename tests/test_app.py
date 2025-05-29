@@ -6,4 +6,4 @@ def test_home():
     assert b"This is a CI/CD pipeline using flask!" in response.data
     response1 = client.get("/abc")
     assert response1.status_code == 200
-    assert b"A is for apple, B is for ball, C is for Cat" in response1.data
+    assert b"Fun with Alphabets" in response1.data
