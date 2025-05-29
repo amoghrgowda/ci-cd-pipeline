@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "CI/CD in Python is working!"
+    return "This is a CI/CD pipeline using flask!"
 
 @app.route("/abc")
 def alphabets():
