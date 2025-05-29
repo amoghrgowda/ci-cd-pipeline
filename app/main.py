@@ -1,13 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "This is a CI/CD pipeline using flask!"
+    return render_template("home.html")
 
 @app.route("/abc")
 def alphabets():
-    return "A is for apple, B is for ball, C is for Cat"
+    return render_template("abc.html")
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
+
