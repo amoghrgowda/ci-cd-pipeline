@@ -21,8 +21,15 @@ jobs:
     - name: Run tests
       run: PYTHONPATH=$PWD pytest
 
+    - name: Stop running containers
+      run: docker stop python-ci-cd || true
+
+    - name: Delete old containers
+      run: docker rm python-ci-cd || true
+ 
     - name: Build Docker image
       run: docker build -t python-ci-cd .
 
     - name: Run Docker container
-      run: docker run -d -p 5000:5000 python-ci-cd
+      run: docker run -d -p 5000:5000 --name python-ci-cd python-ci-cd
+
