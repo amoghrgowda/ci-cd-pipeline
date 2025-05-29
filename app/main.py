@@ -7,7 +7,7 @@ def home():
 
 @app.route("/abc")
 def alphabets():
-    return "A is for apple, B is for ball"
+    return "A is for apple, B is for ball, C is for Cat"
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
